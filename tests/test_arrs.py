@@ -6,6 +6,15 @@ def test_get():
     assert arrs.get([], 0, "test") == "test"
 
 
-def test_slice():
+def test_slice_positive_start():
     assert arrs.my_slice([1, 2, 3, 4], 1, 3) == [2, 3]
     assert arrs.my_slice([1, 2, 3], 1) == [2, 3]
+
+
+def test_slice_negative_start():
+    assert arrs.my_slice([1, 2, 3], -4) == [1, 2, 3]
+    assert arrs.my_slice([1, 2, 3], -2) == [2, 3]
+
+
+def test_slice_empty_list():
+    assert arrs.my_slice([]) == []
